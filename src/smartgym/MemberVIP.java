@@ -6,7 +6,7 @@ public class MemberVIP extends MemberGym {
     // Constructor dengan keyword 'super' dan 'this'
     public MemberVIP(String idMember, String nama, double biayaBulanan, String namaTrainer) {
         super(idMember, nama, biayaBulanan);
-        this.namaTrainer = namaTrainer;
+        setNamaTrainer(namaTrainer);
     }
 
     public String getNamaTrainer() {
@@ -14,7 +14,11 @@ public class MemberVIP extends MemberGym {
     }
 
     public void setNamaTrainer(String namaTrainer) {
-        this.namaTrainer = namaTrainer;
+        if (namaTrainer != null && !namaTrainer. trim().isEmpty()){
+            this.namaTrainer = namaTrainer;
+        } else {
+        this.namaTrainer = "Belum Ditemukan";
+        }
     }
 
     // Method Overriding
