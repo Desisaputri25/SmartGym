@@ -146,15 +146,20 @@ public class SmartGym {
                         int bulan = scanner.nextInt();
                         scanner.nextLine();
 
-                        double total = daftarMember[idx].hitungTotalBayar(bulan);
-                        System.out.printf("Total Biaya Member %s selama %d bulan: Rp %,.2f\n", 
-                                          daftarMember[idx].getNama(), bulan, total);
+                        if (bulan > 0) {
+                            double total = daftarMember[idx].hitungTotalBayar(bulan);
+                            System.out.printf("Total Biaya Member %s selama %d bulan: Rp %,.2f\n", 
+                                            daftarMember[idx].getNama(), bulan, total);
+                        } else {
+                            System.out.println("[Peringatan] Durasi berlangganan harus lebih dari 0 bulan!");
+                        }
                     } else {
                         System.out.println("Nomor urut member tidak valid.");
                     }
                     System.out.print("\nTekan Enter untuk melanjutkan...");
-                    scanner.nextLine();
+                    scanner.nextLine(); 
                 }
+                
                 case 5 -> {
                     isRunning = false;
                     System.out.println("\nTerima kasih telah menggunakan layanan SmartGym!");

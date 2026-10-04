@@ -10,8 +10,8 @@ public class MemberGym {
 
     // Constructor 'this'
     public MemberGym(String idMember, String nama, double biayaBulanan) {
-        this.idMember = idMember;
-        this.nama = nama;
+        setIdMember(idMember);
+        setNama(nama);
         setBiayaBulanan(biayaBulanan); 
         totalMember++;
     }
@@ -22,15 +22,24 @@ public class MemberGym {
     }
 
     public void setIdMember(String idMember) {
-        this.idMember = idMember;
+        if (idMember != null && !idMember.trim().isEmpty()){
+            this.idMember = idMember;
+        } else{
+            this.idMember = "MG-000";
+        }
     }
+        
 
     public String getNama() {
         return nama;
     }
 
     public void setNama(String nama) {
-        this.nama = nama;
+        if (nama != null && !nama.trim().isEmpty()) {
+            this.nama = nama;
+    } else{
+            this.nama = "Tanpa Nama";
+        }
     }
 
     public double getBiayaBulanan() {
@@ -41,7 +50,6 @@ public class MemberGym {
         if (biayaBulanan > 0) {
             this.biayaBulanan = biayaBulanan;
         } else {
-            System.out.println("[Peringatan] Biaya bulanan harus > 0. Diset ke default Rp 150.000.");
             this.biayaBulanan = 150000;
         }
     }

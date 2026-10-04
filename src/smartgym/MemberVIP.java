@@ -14,10 +14,10 @@ public class MemberVIP extends MemberGym {
     }
 
     public void setNamaTrainer(String namaTrainer) {
-        if (namaTrainer != null && !namaTrainer. trim().isEmpty()){
+        if (namaTrainer != null && !namaTrainer.trim().isEmpty()){
             this.namaTrainer = namaTrainer;
         } else {
-        this.namaTrainer = "Belum Ditemukan";
+        this.namaTrainer = "Belum Ditentukan";
         }
     }
 
