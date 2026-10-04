@@ -8,7 +8,7 @@ public class MemberGym {
     // Variable static untuk counter total objek
     public static int totalMember = 0;
 
-    // Constructor 'this'
+    // Constructor
     public MemberGym(String idMember, String nama, double biayaBulanan) {
         setIdMember(idMember);
         setNama(nama);
