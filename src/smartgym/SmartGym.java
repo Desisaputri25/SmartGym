@@ -49,12 +49,11 @@ public class SmartGym {
         MemberGym[] daftarMember = new MemberGym[20];
         int jumlahMember = 0;
 
-        // Inisialisasi 4 Data Awal
+        // Inisialisasi 5 Data Awal (Array Superclass menampung berbagai Subclass)
         daftarMember[jumlahMember++] = new MemberReguler("MG-01", "Desi Saputri", 200000, 101);
         daftarMember[jumlahMember++] = new MemberReguler("MG-02", "Suci Widia Ningsih", 200000, 102);
         daftarMember[jumlahMember++] = new MemberVIP("MG-03", "Ayu Wardani", 500000, "Coach Rafli");
         daftarMember[jumlahMember++] = new MemberVIP("MG-04", "Muhammad Ramadani", 500000, "Coach Miftah");
-        
         daftarMember[jumlahMember++] = new MemberPelajar("MG-05", "Rian Pratama", 150000, "KP-001");
         
         boolean isRunning = true;
