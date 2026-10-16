@@ -23,9 +23,9 @@ public class MemberPelajar extends MemberGym {
     // Method Overriding untuk menampilkan info khusus
     @Override
     public void tampilkanInfo() {
-        System.out.printf("[Member Pelajar]   ");
+        System.out.printf("[Member Pelajar] ");
         super.tampilkanInfo();
-        System.out.printf(" | No Kartu Pelajar: %s\n", this.nomorKartuPelajar);
+        System.out.printf("  | No Kartu Pelajar: %s\n", this.nomorKartuPelajar);
     }
 
     // Overriding perhitungan total bayar khusus pelajar (Diskon 20%)

@@ -26,7 +26,7 @@ public class MemberVIP extends MemberGym {
     public void tampilkanInfo() {
         System.out.printf("[Member VIP]     ");
         super.tampilkanInfo();
-        System.out.printf(" | Trainer: %s\n", this.namaTrainer);
+        System.out.printf("  | Trainer: %s\n", this.namaTrainer);
     }
 
     // Overriding Perhitungan Total Bayar (Diskon 15% jika > 6 bulan)

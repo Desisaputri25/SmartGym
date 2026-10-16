@@ -28,7 +28,6 @@ public class MemberGym {
             this.idMember = "MG-000";
         }
     }
-        
 
     public String getNama() {
         return nama;
@@ -53,10 +52,9 @@ public class MemberGym {
             this.biayaBulanan = 150000;
         }
     }
-
-    // Method Induk (Akan di-override oleh Subclass)
+    
     public void tampilkanInfo() {
-        System.out.printf("ID: %-6s | Nama: %-20s | Biaya/Bulan: Rp %,.2f", 
+        System.out.printf("ID: %-6s| Nama: %-20s | Biaya/Bulan: Rp %,.2f", 
                           this.idMember, this.nama, this.biayaBulanan);
     }
 

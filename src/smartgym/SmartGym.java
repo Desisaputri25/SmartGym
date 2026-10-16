@@ -21,7 +21,7 @@ public class SmartGym {
 
     // Method Overloading 2: Mencari berdasarkan Maksimal Biaya Bulanan
     public static void cariMember(double maxBiaya, MemberGym[] daftar, int jumlah) {
-        System.out.printf("\n--- Hasil Pencarian Biaya <= Rp %,.2f ---\n", maxBiaya);
+        System.out.printf("\n------------------------------------ Hasil Pencarian Biaya <= Rp %,.2f ------------------------------------\n", maxBiaya);
         boolean ditemukan = false;
         for (int i = 0; i < jumlah; i++) {
             if (daftar[i].getBiayaBulanan() <= maxBiaya) {
@@ -35,13 +35,13 @@ public class SmartGym {
     }
     
     public static void simulasiLatihan(MemberGym member) {
-        System.out.println("\n================ SIMULASI FASILITAS LATIHAN ================");
+        System.out.println("\n========================================== SIMULASI FASILITAS LATIHAN ==========================================");
         System.out.println("Memproses fasilitas untuk member berikut:");
        
         member.tampilkanInfo(); 
         
         System.out.println("Status Fasilitas: Berhasil diaktifkan untuk sesi latihan hari ini.");
-        System.out.println("============================================================");
+        System.out.println("================================================================================================================");
     }
     
     public static void main(String[] args) {
@@ -55,7 +55,7 @@ public class SmartGym {
         daftarMember[jumlahMember++] = new MemberVIP("MG-03", "Ayu Wardani", 500000, "Coach Rafli");
         daftarMember[jumlahMember++] = new MemberVIP("MG-04", "Muhammad Ramadani", 500000, "Coach Miftah");
         
-        daftarMember[jumlahMember++] = new MemberPelajar("MG-05", "Rian Pratama", 150000, "KP-202611");
+        daftarMember[jumlahMember++] = new MemberPelajar("MG-05", "Rian Pratama", 150000, "KP-001");
         
         boolean isRunning = true;
 
@@ -69,7 +69,7 @@ public class SmartGym {
             System.out.println("2. Lihat Daftar Member");
             System.out.println("3. Cari Member ");
             System.out.println("4. Hitung Estimasi Pembayaran Member");
-            System.out.println("5. Simulasi Fasilitas Latihan (Dynamic Binding)");
+            System.out.println("5. Simulasi Fasilitas Latihan");
             System.out.println("6. Keluar");
             System.out.print("Pilih Menu (1-6): ");
 

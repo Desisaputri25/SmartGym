@@ -19,11 +19,10 @@ public class MemberReguler extends MemberGym {
         }
     }
 
-    // Method Overriding
     @Override
     public void tampilkanInfo() {
         System.out.printf("[Member Reguler] ");
         super.tampilkanInfo();
-        System.out.printf(" | No Loker: %d\n", this.noLoker);
+        System.out.printf("  | No Loker: %d\n", this.noLoker);
     }
 }
