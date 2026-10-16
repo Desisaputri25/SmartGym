@@ -34,6 +34,7 @@ public class SmartGym {
         }
     }
     
+    // Method dengan parameter Superclass untuk mengeksekusi Dynamic Binding
     public static void simulasiLatihan(MemberGym member) {
         System.out.println("\n========================================== SIMULASI FASILITAS LATIHAN ==========================================");
         System.out.println("Memproses fasilitas untuk member berikut:");
