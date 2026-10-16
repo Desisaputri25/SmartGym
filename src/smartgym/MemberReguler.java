@@ -3,7 +3,6 @@ package smartgym;
 public class MemberReguler extends MemberGym {
     private int noLoker;
 
-    // Constructor dengan keyword 'super' dan 'this'
     public MemberReguler(String idMember, String nama, double biayaBulanan, int noLoker) {
         super(idMember, nama, biayaBulanan);
         this.noLoker = noLoker;
