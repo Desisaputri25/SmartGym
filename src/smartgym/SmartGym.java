@@ -33,7 +33,17 @@ public class SmartGym {
             System.out.println("Tidak ada member sesuai batas biaya tersebut.");
         }
     }
-
+    
+    public static void simulasiLatihan(MemberGym member) {
+        System.out.println("\n================ SIMULASI FASILITAS LATIHAN ================");
+        System.out.println("Memproses fasilitas untuk member berikut:");
+       
+        member.tampilkanInfo(); 
+        
+        System.out.println("Status Fasilitas: Berhasil diaktifkan untuk sesi latihan hari ini.");
+        System.out.println("============================================================");
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         MemberGym[] daftarMember = new MemberGym[20];
@@ -44,7 +54,9 @@ public class SmartGym {
         daftarMember[jumlahMember++] = new MemberReguler("MG-02", "Suci Widia Ningsih", 200000, 102);
         daftarMember[jumlahMember++] = new MemberVIP("MG-03", "Ayu Wardani", 500000, "Coach Rafli");
         daftarMember[jumlahMember++] = new MemberVIP("MG-04", "Muhammad Ramadani", 500000, "Coach Miftah");
-
+        
+        daftarMember[jumlahMember++] = new MemberPelajar("MG-05", "Rian Pratama", 150000, "KP-202611");
+        
         boolean isRunning = true;
 
         System.out.println("==================================================");
@@ -57,11 +69,12 @@ public class SmartGym {
             System.out.println("2. Lihat Daftar Member");
             System.out.println("3. Cari Member ");
             System.out.println("4. Hitung Estimasi Pembayaran Member");
-            System.out.println("5. Keluar");
-            System.out.print("Pilih Menu (1-5): ");
+            System.out.println("5. Simulasi Fasilitas Latihan (Dynamic Binding)");
+            System.out.println("6. Keluar");
+            System.out.print("Pilih Menu (1-6): ");
 
             int pilihan = scanner.nextInt();
-            scanner.nextLine(); // Clear buffer
+            scanner.nextLine(); 
 
             switch (pilihan) {
                 case 1 -> {
@@ -69,7 +82,8 @@ public class SmartGym {
                         System.out.println("\n--- Pilih Tipe Member ---");
                         System.out.println("1. Member Reguler");
                         System.out.println("2. Member VIP");
-                        System.out.print("Pilihan (1/2): ");
+                        System.out.println("3. Member Pelajar/Mahasiswa");
+                        System.out.print("Pilihan (1-3): ");
                         int tipe = scanner.nextInt();
                         scanner.nextLine();
 
@@ -90,7 +104,12 @@ public class SmartGym {
                             System.out.print("Masukkan Nama Personal Trainer: ");
                             String trainer = scanner.nextLine();
                             daftarMember[jumlahMember++] = new MemberVIP(id, nama, biaya, trainer);
-                        } else {
+                        }else if (tipe == 3) {
+                            System.out.print("Masukkan Nomor Kartu Pelajar: ");
+                            String nomorKartu = scanner.nextLine();
+                            daftarMember[jumlahMember++] = new MemberPelajar(id, nama, biaya, nomorKartu);
+                        }
+                        else {
                             System.out.println("Pilihan tipe member tidak valid!");
                             break;
                         }
@@ -99,6 +118,7 @@ public class SmartGym {
                         System.out.println("Kapasitas penyimpanan penuh!");
                     }
                 }
+                
                 case 2 -> {
                     System.out.println("\n================================================ DAFTAR MEMBER SMARTGYM ===============================================");
                     if (jumlahMember == 0) {
@@ -114,6 +134,7 @@ public class SmartGym {
                     System.out.print("\nTekan Enter untuk melanjutkan...");
                     scanner.nextLine();
                 }
+                
                 case 3 -> {
                     System.out.println("\n--- Cari Member  ---");
                     System.out.println("1. Cari Berdasarkan Nama");
@@ -137,10 +158,13 @@ public class SmartGym {
                     System.out.print("\nTekan Enter untuk melanjutkan...");
                     scanner.nextLine();
                 }
+                
                 case 4 -> {
                     System.out.println("\n--- Hitung Estimasi Pembayaran Member ---");
                     System.out.print("Masukkan Nomor Urut Member (1-" + jumlahMember + "): ");
                     int idx = scanner.nextInt() - 1;
+                    scanner.nextLine();
+                    
                     if (idx >= 0 && idx < jumlahMember) {
                         System.out.print("Masukkan Durasi Berlangganan (Bulan): ");
                         int bulan = scanner.nextInt();
@@ -161,8 +185,23 @@ public class SmartGym {
                 }
                 
                 case 5 -> {
+                    System.out.println("\n--- Simulasi Fasilitas Latihan ---");
+                    System.out.print("Masukkan Nomor Urut Member (1-" + jumlahMember + "): ");
+                    int idx = scanner.nextInt() - 1;
+                    scanner.nextLine();
+                    
+                    if (idx >= 0 && idx < jumlahMember) {
+                        // Upcasting parameter: Passing objek subclass ke method berparameter Superclass
+                        simulasiLatihan(daftarMember[idx]);
+                    } else {
+                        System.out.println("Nomor urut member tidak valid.");
+                    }
+                    System.out.print("\nTekan Enter untuk melanjutkan...");
+                    scanner.nextLine();
+                }
+                case 6 -> {
                     isRunning = false;
-                    System.out.println("\nTerima kasih telah menggunakan layanan SmartGym!");
+                System.out.println("\nTerima kasih telah menggunakan layanan SmartGym!");
                 }
                 default -> System.out.println("Pilihan menu tidak valid. Silakan coba lagi.");
             }
