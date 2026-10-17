@@ -41,7 +41,7 @@ public class MemberVIP extends MemberGym implements DapatLocker, DapatPersonalTr
     // Implementasi Abstract Method dari MemberGym
     @Override
     public void cetakAturanFasilitas() {
-        System.out.println("  -> [Aturan]: Akses VIP Lounge, saunarium, & prioritas alat tanpa antre.");
+        System.out.println("[Aturan]: Akses VIP Lounge, saunarium, & prioritas alat tanpa antre.");
     }
     
     // Implementasi Interface DapatLocker
