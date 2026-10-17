@@ -34,4 +34,9 @@ public class MemberPelajar extends MemberGym {
         double total = super.hitungTotalBayar(jumlahBulan);
         return total * 0.80; // Diskon khusus pelajar 20%
     }
+    
+    @Override
+    public void cetakAturanFasilitas() {
+        System.out.println("[Aturan]: Berlaku pada jam operasional pelajar (08.00 - 17.00 WIB) & wajib sertakan Kartu Pelajar.");
+    }
 }

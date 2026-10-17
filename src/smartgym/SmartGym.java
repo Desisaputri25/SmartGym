@@ -40,6 +40,17 @@ public class SmartGym {
         System.out.println("Memproses fasilitas untuk member berikut:");
        
         member.tampilkanInfo(); 
+        member.cetakAturanFasilitas();
+        
+        if (member instanceof DapatLocker) {
+            DapatLocker itemLocker = (DapatLocker) member;
+            itemLocker.klaimLocker();
+        }
+        
+        if (member instanceof DapatPersonalTrainer) {
+            DapatPersonalTrainer itemTrainer = (DapatPersonalTrainer) member;
+            itemTrainer.jadwalkanTrainer();
+        }
         
         System.out.println("Status Fasilitas: Berhasil diaktifkan untuk sesi latihan hari ini.");
         System.out.println("================================================================================================================");

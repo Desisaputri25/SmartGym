@@ -1,6 +1,6 @@
 package smartgym;
 
-public class MemberGym {
+public abstract class MemberGym {
     private String idMember;
     private String nama;
     private double biayaBulanan;
@@ -61,4 +61,7 @@ public class MemberGym {
     public double hitungTotalBayar(int jumlahBulan) {
         return this.biayaBulanan * jumlahBulan;
     }
+    
+    public abstract void cetakAturanFasilitas();
 }
+

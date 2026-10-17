@@ -1,9 +1,8 @@
 package smartgym;
 
-public class MemberVIP extends MemberGym {
+public class MemberVIP extends MemberGym implements DapatLocker, DapatPersonalTrainer {
     private String namaTrainer;
 
-    // Constructor dengan keyword 'super' dan 'this'
     public MemberVIP(String idMember, String nama, double biayaBulanan, String namaTrainer) {
         super(idMember, nama, biayaBulanan);
         setNamaTrainer(namaTrainer);
@@ -38,4 +37,23 @@ public class MemberVIP extends MemberGym {
         }
         return total;
     }
+    
+    // Implementasi Abstract Method dari MemberGym
+    @Override
+    public void cetakAturanFasilitas() {
+        System.out.println("  -> [Aturan]: Akses VIP Lounge, saunarium, & prioritas alat tanpa antre.");
+    }
+    
+    // Implementasi Interface DapatLocker
+    @Override
+    public void klaimLocker() {
+        System.out.println("[Aksi Locker]: Loker Eksklusif VIP berpemanas berhasil diaktifkan.");
+    }
+    
+    // Implementasi Interface DapatPersonalTrainer
+    @Override
+    public void jadwalkanTrainer() {
+        System.out.println("[Aksi Trainer]: Sesi latihan privat bersama " + this.namaTrainer + " telah dijadwalkan.");
+    }
+    
 }
