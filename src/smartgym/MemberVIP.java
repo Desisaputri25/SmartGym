@@ -55,5 +55,4 @@ public class MemberVIP extends MemberGym implements DapatLocker, DapatPersonalTr
     public void jadwalkanTrainer() {
         System.out.println("[Aksi Trainer]: Sesi latihan privat bersama " + this.namaTrainer + " telah dijadwalkan.");
     }
-    
 }
