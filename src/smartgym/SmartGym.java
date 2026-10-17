@@ -202,7 +202,6 @@ public class SmartGym {
                     scanner.nextLine();
                     
                     if (idx >= 0 && idx < jumlahMember) {
-                        // Upcasting parameter: Passing objek subclass ke method berparameter Superclass
                         simulasiLatihan(daftarMember[idx]);
                     } else {
                         System.out.println("Nomor urut member tidak valid.");
