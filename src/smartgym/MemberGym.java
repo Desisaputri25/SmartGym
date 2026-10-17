@@ -64,4 +64,3 @@ public abstract class MemberGym {
     
     public abstract void cetakAturanFasilitas();
 }
-
